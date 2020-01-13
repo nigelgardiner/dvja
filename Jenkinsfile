@@ -18,11 +18,13 @@ pipeline {
 			dependencyCheckPublisher pattern: ''
 		}
 	}
+	/*
 	stage('Scan for vulnerabilities') {
  	   steps {
 	       sh 'mvn jetty:run -Djetty.http.port=9999 & sleep 15 && zap-cli quick-scan --self-contained --spider -r http://127.0.0.1:9999 && zap-cli report -o zap-report.html -f html'
        }
 }
+*/
 stage('Analysis') {
       steps {
         sh "mvn --batch-mode -V -U -e checkstyle:checkstyle pmd:pmd pmd:cpd spotbugs:spotbugs"
@@ -39,13 +41,13 @@ stage('Analysis') {
       }
     }
   }
-
+/*
   post {
     always {
       archiveArtifacts artifacts: 'zap-report.html', fingerprint: true
     }
   }
-
+*/
   post {
     always {
       recordIssues enabledForFailure: true, tools: [mavenConsole(), java(), javaDoc()]
