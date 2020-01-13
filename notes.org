@@ -1,3 +1,0 @@
-Repository URL: https://github.com/nigelgardiner/dvja
-Jenkins URL: http://ako20-appli-uymvk2leqzls-1374522956.eu-west-1.elb.amazonaws.com/
-S3 Bucket: ako2020-buildartifacts-9u83c8ja3te7
