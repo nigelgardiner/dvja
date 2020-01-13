@@ -5,7 +5,7 @@ pipeline {
     maven "apache-maven-3.6.3"
   }
 
-  stages {
+  STAGES {
     stage('Build') {
       steps {
         git 'https://github.com/ajlanghorn/dvja.git'
