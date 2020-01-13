@@ -15,7 +15,7 @@ pipeline {
 	stage('Check dependencies') {
 		steps {
 			dependencyCheck additionalArguments: '', odcInstallation: 'Dependency-Check'
-			dependencyCheckPublisher pattern: failedTotalCritical: 60, failedTotalHigh: 60, failedTotalLow: 100, failedTotalMedium: 80, pattern: '', unstableTotalCritical: 60, unstableTotalHigh: 60, unstableTotalLow: 100, unstableTotalMedium: 80
+			dependencyCheckPublisher pattern: ''
 		}
 	}
 	stage('Scan for vulnerabilities') {
